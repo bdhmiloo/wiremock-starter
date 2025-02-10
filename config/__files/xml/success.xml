@@ -1,0 +1,17 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <foo:bar xmlns:foo="http://example.com/">
+            <return>
+                <name>{{xPath request.body '//*/name/text()'}}</name>
+                <sex>{{xPath request.body '//*/sex/text()'}}</sex>
+                <age>{{xPath request.body '//*/age/text()'}}</age>
+                <occupation>{{xPath request.body '//*/occupation/text()'}}</occupation>
+                <status>Ok</status>
+            </return>
+        </foo:bar>
+    </soapenv:Body>
+</soapenv:Envelope>
