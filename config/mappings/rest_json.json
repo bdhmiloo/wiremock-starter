@@ -1,0 +1,35 @@
+{
+  "mappings": [
+    {
+      "name": "json - success",
+      "request": {
+        "urlPathPattern": "/recipe/asian",
+        "method": "GET",
+        "headers": {
+          "cuisine-token": {
+            "matches": "(.*?)"
+          }
+        },
+        "queryParameters": {
+          "name": {
+            "matches": "ramen"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "food": "{{request.query.name}}",
+          "status": "cooked"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "priority": 1
+    }
+  ]
+}
