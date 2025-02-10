@@ -1,0 +1,9 @@
+services:
+  wiremock:
+    image: holomekc/wiremock-gui
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./config:/home/wiremock
+    entrypoint: ["/docker-entrypoint.sh", "--max-request-journal", "200", "--local-response-templating"]

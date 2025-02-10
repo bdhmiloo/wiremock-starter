@@ -1,0 +1,29 @@
+###
+# @name rest json endpoint
+# @no-log
+# @no-cookie-jar
+GET http://localhost:8080/recipe/asian?name=ramen
+cuisine-token: "sometoken"
+Content-Type: application/json
+
+###
+# @name soap xml endpoint
+# @no-log
+# @no-cookie-jar
+POST http://localhost:8080/hello/world
+Content-Type: application/soap+xml
+
+<?xml version='1.0' encoding='UTF-8'?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <foo:bar xmlns:foo="http://example.com/">
+            <test>
+                <name>donkey</name>
+                <sex>male</sex>
+                <age>100</age>
+                <occupation>jobless</occupation>
+            </test>
+        </foo:bar>
+    </soapenv:Body>
+</soapenv:Envelope>
